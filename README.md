@@ -1,73 +1,163 @@
-# Welcome to your Lovable project
+Bug Graveyard – Production Bug Memorial & Analytics
+Project Overview
 
-## Project info
+Bug Graveyard is an AI-enhanced post-mortem platform designed for documenting, analyzing, and learning from production bugs. It is not just a bug tracker—it is a tool for engineering maturity that helps teams understand root causes, track fixes, evaluate impact, and prevent future issues.
 
-**URL**: https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID
+Key features include:
 
-## How can I edit this code?
+Detailed bug entries with cause, fix, impact, lessons learned, and prevention checklist.
 
-There are several ways of editing your application.
+Interactive timeline visualization showing bug evolution over time.
 
-**Use Lovable**
+AI-assisted analysis providing summaries and improvement suggestions.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and start prompting.
+Analytics dashboard tracking trends such as average resolution time, recurrence rates, and severity distribution.
 
-Changes made via Lovable will be committed automatically to this repo.
+This tool emphasizes post-mortem culture, incident tracking, and actionable insights for engineering teams.
 
-**Use your preferred IDE**
+Features
+1. Bug Documentation
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+Add new bugs with:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+Cause
 
-Follow these steps:
+Fix
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+Impact
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+Lessons learned
 
-# Step 3: Install the necessary dependencies.
-npm i
+Prevention checklist
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+Optional AI-assisted summary generation for deeper insights.
 
-**Edit a file directly in GitHub**
+2. Timeline Visualization
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+Interactive timeline showing bug discovery, fix, and regression events.
 
-**Use GitHub Codespaces**
+Bugs color-coded by severity.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+Zoom and pan functionality for large timelines.
 
-## What technologies are used for this project?
+3. Analytics Dashboard
 
-This project is built with:
+Bugs by severity and status.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Average resolution time tracking.
 
-## How can I deploy this project?
+Lessons learned trends and recurrence analysis.
 
-Simply open [Lovable](https://lovable.dev/projects/REPLACE_WITH_PROJECT_ID) and click on Share -> Publish.
+Export charts and data (PDF / CSV).
 
-## Can I connect a custom domain to my Lovable project?
+4. AI Integration
 
-Yes, you can!
+Server-side AI analysis of bug cause, fix, and impact.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Generates post-mortem summaries and preventive suggestions.
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+Optional “Senior Engineer Review” mode for deeper insights.
+
+5. Security & UX
+
+Input validation and XSS prevention.
+
+Role-based authentication (optional).
+
+Responsive, accessible design.
+
+Dark mode for long-term usability.
+
+Tech Stack
+
+Frontend: React, React-Vis / D3.js / Chart.js for visualizations
+
+Backend: Node.js + Express
+
+Database: MongoDB / PostgreSQL
+
+AI Integration: External AI API (server-side) for bug analysis and summaries
+
+Other: CORS, dotenv for environment variables, secure backend API key handling
+
+Architecture
+Frontend (React)  <--->  Backend (Node.js/Express)  <--->  Database
+       |                           |
+       |-- Bug Forms / Timeline UI |
+       |-- Dashboard Charts        |
+                                   |
+                      AI Analysis & Summary Generation (Server-side API)
+
+
+Frontend handles interactive UI, timeline visualization, and bug submission forms.
+
+Backend handles secure API calls, database management, and AI integration.
+
+AI API key is stored securely on the server; never exposed to the frontend.
+
+Installation & Setup
+Backend
+
+Clone the repository:
+
+git clone https://github.com/yourusername/bug-graveyard.git
+cd bug-graveyard/server
+
+
+Install dependencies:
+
+npm install
+
+
+Create .env file:
+
+AI_API_KEY=your_secure_api_key_here
+PORT=5000
+
+
+Start backend:
+
+node server.js
+
+Frontend
+
+Navigate to frontend folder:
+
+cd ../client
+
+
+Install dependencies:
+
+npm install
+
+
+Start frontend:
+
+npm start
+
+
+Open in browser: http://localhost:3000
+
+Usage
+
+Add a new bug using the “Add Bug” form.
+
+AI will optionally analyze the bug and provide a post-mortem summary.
+
+View bugs along the interactive timeline to see evolution and resolution.
+
+Analyze trends using the analytics dashboard.
+
+Export charts and bug reports as needed.
+
+Future Enhancements
+
+Multi-project support for organizations.
+
+Real-time collaboration for distributed teams.
+
+Offline mode with local storage and background sync.
+
+Advanced AI recommendations for preventive engineering.
+
+Integration with GitHub / Jira for automated bug imports.
